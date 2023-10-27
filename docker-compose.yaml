@@ -1,0 +1,9 @@
+services:
+  crate-hello-world:
+    image: crate-hello:latest
+    ports:
+      - "8000:8000"
+
+
+
+#PROBABLY UNNESCESSARY

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Hello World!</h1>
+<img src="https://cratedb.com/hubfs/CrateDB-logo-blue-white.svg">
+
+{% block content %}
+<h3>It is {% now "SHORT_DATETIME_FORMAT" %}</h3>
+{{ headers }}
+<!-- default content text (typically empty) -->
+{% endblock %}
+
+</body>
+</html>

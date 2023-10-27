@@ -1,0 +1,22 @@
+# ingress.yml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress-microk8s
+  labels:
+    app: nginx-ingress-microk8s
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
+spec:
+  rules:
+    - host: "crate.hello.net"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/(.*)"
+            backend:
+              service:
+                name: {{ include "helm-crate-hello.fullname" . }}
+                port:
+                  number: {{ .Values.service.port }}
