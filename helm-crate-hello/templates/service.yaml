@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: ingress
   namespace: ingress
+  annotations:
+    cert-manager.io/cluster-issuer: ca-issuer
 spec:
   externalTrafficPolicy: Local
   loadBalancerIP: 192.168.1.27

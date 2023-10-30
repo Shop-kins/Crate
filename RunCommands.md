@@ -2,9 +2,9 @@
 
 `docker build . -t crate-hello`
 
-`microk8s enable metallb` [I had to do this to test, but if your setup already has that then no problem]
+`microk8s enable metallb` [I had to do this to test, but if your setup already has that then no problem] [192.168.1.0-192.168.2.0]
 
-`microk8s enable ingress` [Same as above]
+`microk8s enable ingress cert-manager dns` [Same as above]
 
 `microk8s kubectl create namespace crate`
 
